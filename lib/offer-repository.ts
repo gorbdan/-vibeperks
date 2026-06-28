@@ -4,6 +4,33 @@ import type { CreateOfferInput, Offer, UpdateOfferInput } from "@/types/offer";
 export class OfferRepository {
   private supabase = createSupabaseClient();
 
+  async listOffers(): Promise<Offer[]> {
+    const { data, error } = await this.supabase
+      .from("offers")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      throw error;
+    }
+
+    return data;
+  }
+
+  async getOfferById(id: string): Promise<Offer | null> {
+    const { data, error } = await this.supabase
+      .from("offers")
+      .select("*")
+      .eq("id", id)
+      .maybeSingle();
+
+    if (error) {
+      throw error;
+    }
+
+    return data;
+  }
+
   async getActiveOffer(): Promise<Offer | null> {
     const { data, error } = await this.supabase
       .from("offers")

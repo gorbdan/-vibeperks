@@ -110,6 +110,10 @@ The project includes these endpoints:
 
 If there is no active offer, it returns `404`.
 
+## Admin
+
+Offers can be managed at `http://localhost:3000/admin/offers`.
+
 ## Project Structure
 
 ```text
