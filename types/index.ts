@@ -1,5 +1,2 @@
-export type ApiResponse = {
-  ok: boolean;
-};
-
+export type { ApiErrorResponse, ApiSuccessResponse } from "./api";
 export type { CreateOfferInput, Offer, UpdateOfferInput } from "./offer";

@@ -7,7 +7,7 @@ import type { CreateOfferInput } from "@/types/offer";
 
 export async function createOfferAction(formData: FormData) {
   const repository = new OfferRepository();
-  await repository.createOffer(readOfferInput(formData));
+  await repository.createOffer(parseOfferFormData(formData));
   revalidatePath("/admin/offers");
   redirect("/admin/offers");
 }
@@ -20,7 +20,7 @@ export async function updateOfferAction(formData: FormData) {
   }
 
   const repository = new OfferRepository();
-  await repository.updateOffer(id, readOfferInput(formData));
+  await repository.updateOffer(id, parseOfferFormData(formData));
   revalidatePath("/admin/offers");
   redirect("/admin/offers");
 }
@@ -37,7 +37,7 @@ export async function deleteOfferAction(formData: FormData) {
   revalidatePath("/admin/offers");
 }
 
-function readOfferInput(formData: FormData): CreateOfferInput {
+function parseOfferFormData(formData: FormData): CreateOfferInput {
   return {
     company: String(formData.get("company") || ""),
     title: String(formData.get("title") || ""),

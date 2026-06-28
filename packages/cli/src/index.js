@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const apiUrl = process.env.VIBEPERKS_API_URL || "http://localhost:3000";
+import { cliConfig } from "./config.js";
 
 try {
-  const response = await fetch(`${apiUrl}/api/offer`);
+  const response = await fetch(`${cliConfig.apiUrl}/api/offer`);
 
   if (!response.ok) {
     process.exit(0);
@@ -13,7 +13,7 @@ try {
   const label = offer.title === offer.company ? offer.description : offer.title;
   const line = `🎁 ${offer.company} → ${label || offer.title}`;
 
-  process.stdout.write(trim(line, 80));
+  process.stdout.write(trim(line, cliConfig.maxLineLength));
 } catch {
   process.exit(0);
 }

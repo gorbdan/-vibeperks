@@ -92,11 +92,31 @@ Run ESLint:
 npm run lint
 ```
 
+Run TypeScript checks:
+
+```bash
+npm run typecheck
+```
+
 Check formatting:
 
 ```bash
 npm run format:check
 ```
+
+## Architecture
+
+- `app/` contains routes, pages, and server actions.
+- `lib/offer-repository.ts` is the only layer that queries Supabase tables.
+- `lib/supabase.ts` creates the Supabase client from shared config.
+- `lib/config.ts` centralizes environment variables.
+- `lib/api-response.ts` centralizes API success and error responses.
+- `lib/logger.ts` centralizes logging for server-side code.
+- `types/` contains shared TypeScript types.
+- `packages/cli/` contains the VibePerks CLI and its CLI-specific config.
+
+API routes should stay thin: call repositories, return shared response helpers,
+and log unexpected errors through `logger`.
 
 ## API
 
@@ -196,14 +216,21 @@ The status line output is compact:
     page.tsx
   components/
   lib/
+    api-response.ts
+    config.ts
+    logger.ts
     offer-repository.ts
     supabase.ts
   types/
+    api.ts
     offer.ts
     index.ts
   public/
   packages/
     cli/
+      src/
+        config.js
+        index.js
   supabase/
     migrations/
     seed.sql

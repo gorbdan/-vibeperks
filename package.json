@@ -10,6 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
     "cli": "node packages/cli/src/index.js",
     "format": "prettier --write .",
     "format:check": "prettier --check ."

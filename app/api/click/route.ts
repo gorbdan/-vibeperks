@@ -1,3 +1,5 @@
+import { okResponse } from "@/lib/api-response";
+
 export async function POST() {
-  return Response.json({ ok: true });
+  return okResponse();
 }

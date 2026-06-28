@@ -1,4 +1,6 @@
 import { OfferRepository } from "@/lib/offer-repository";
+import { errorResponse, jsonResponse } from "@/lib/api-response";
+import { logger } from "@/lib/logger";
 
 export const dynamic = "force-dynamic";
 
@@ -8,11 +10,12 @@ export async function GET() {
     const offer = await repository.getActiveOffer();
 
     if (!offer) {
-      return Response.json({ error: "Offer not found" }, { status: 404 });
+      return errorResponse("Offer not found", 404);
     }
 
-    return Response.json(offer);
-  } catch {
-    return Response.json({ error: "Could not load offer" }, { status: 500 });
+    return jsonResponse(offer);
+  } catch (error) {
+    logger.error("Could not load offer", error, { route: "GET /api/offer" });
+    return errorResponse("Could not load offer", 500);
   }
 }
