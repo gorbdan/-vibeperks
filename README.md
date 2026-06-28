@@ -1,8 +1,6 @@
 # VibePerks
 
-VibePerks is a Vercel-ready Next.js project foundation for a future product that will show useful AI-related perks to builders.
-
-This repository currently contains only the technical scaffold. It does not include authentication, database tables, offers, analytics, or business logic.
+VibePerks is a Vercel-ready Next.js project for showing useful AI-related perks to builders.
 
 ## Stack
 
@@ -52,6 +50,34 @@ Open:
 
 If port `3000` is busy, Next.js will print the next available local URL.
 
+## Database
+
+Database changes live in `supabase/migrations`.
+
+The first migration creates the `offers` table:
+
+```text
+supabase/migrations/20260628220000_create_offers.sql
+```
+
+Run migrations with the Supabase CLI:
+
+```bash
+npx supabase db push
+```
+
+Seed test offers:
+
+```bash
+npx supabase db reset
+```
+
+The seed file is:
+
+```text
+supabase/seed.sql
+```
+
 ## Checks
 
 Run a production build:
@@ -72,15 +98,17 @@ Check formatting:
 npm run format:check
 ```
 
-## API Stubs
+## API
 
-The scaffold includes placeholder endpoints:
+The project includes these endpoints:
 
 - `GET /api/offer`
 - `POST /api/impression`
 - `POST /api/click`
 
-They currently return simple JSON stubs.
+`GET /api/offer` returns one active offer from Supabase.
+
+If there is no active offer, it returns `404`.
 
 ## Project Structure
 
@@ -96,11 +124,15 @@ They currently return simple JSON stubs.
     page.tsx
   components/
   lib/
+    offer-repository.ts
     supabase.ts
   types/
+    offer.ts
     index.ts
   public/
   supabase/
+    migrations/
+    seed.sql
   scripts/
   .env.example
   .eslintrc.json
