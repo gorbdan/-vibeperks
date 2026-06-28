@@ -2,6 +2,23 @@
 
 VibePerks is a Vercel-ready Next.js project for showing useful AI-related perks to builders.
 
+![VibePerks demo](public/demo.gif)
+
+## Quick Start
+
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`.
+
+## Screenshots
+
+![Landing page](public/screenshot-landing.png)
+
+![Claude Code status line](public/screenshot-status-line.png)
+
 ## Stack
 
 - Next.js App Router
