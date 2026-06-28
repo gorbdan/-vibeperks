@@ -1,76 +1,114 @@
 # VibePerks
 
-Tiny AI offers for coding status lines.
+VibePerks is a Vercel-ready Next.js project foundation for a future product that will show useful AI-related perks to builders.
 
-## Structure
+This repository currently contains only the technical scaffold. It does not include authentication, database tables, offers, analytics, or business logic.
 
-- `apps/web` - Next.js app, landing page, admin page, API routes.
-- `packages/cli` - Node.js status-line CLI.
-- `supabase/schema.sql` - database schema.
-- `docs/API.md` - endpoint reference.
+## Stack
 
-## Quick Start
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- Supabase client
+- ESLint
+- Prettier
+- Vercel-ready project structure
 
-1. Install dependencies:
+## Installation
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-2. Start the web app:
+## Environment
+
+Create a local environment file:
+
+```bash
+cp .env.example .env.local
+```
+
+Fill in Supabase values:
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+```
+
+## Development
+
+Start the project:
 
 ```bash
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Open:
 
-By default the app uses a local JSON database at `apps/web/data/vibeperks.local.json`.
-This is enough to test the MVP without creating Supabase credentials.
+- `http://localhost:3000`
+- `http://localhost:3000/admin`
 
-## Admin
+If port `3000` is busy, Next.js will print the next available local URL.
 
-Open `http://localhost:3000/admin`, paste token `dev`, then add or disable offers.
+## Checks
 
-The admin page shows impressions and clicks.
-
-## CLI
-
-Run the local CLI against the local web app:
+Run a production build:
 
 ```bash
-VIBEPERKS_API_URL=http://localhost:3000 npm run cli
+npm run build
 ```
 
-It prints one short line:
+Run ESLint:
+
+```bash
+npm run lint
+```
+
+Check formatting:
+
+```bash
+npm run format:check
+```
+
+## API Stubs
+
+The scaffold includes placeholder endpoints:
+
+- `GET /api/offer`
+- `POST /api/impression`
+- `POST /api/click`
+
+They currently return simple JSON stubs.
+
+## Project Structure
 
 ```text
-🎁 Railway gives credits for new projects → https://railway.app
+/
+  docs/
+    MVP.md
+  app/
+    admin/
+    api/
+    globals.css
+    layout.tsx
+    page.tsx
+  components/
+  lib/
+    supabase.ts
+  types/
+    index.ts
+  public/
+  supabase/
+  scripts/
+  .env.example
+  .eslintrc.json
+  .gitignore
+  .prettierrc
+  next.config.mjs
+  package.json
+  postcss.config.mjs
+  tailwind.config.ts
+  tsconfig.json
 ```
-
-Use the same command as a Claude Code status line command.
-
-## Supabase Mode
-
-For production-like data storage:
-
-1. Create a Supabase project.
-2. Run `supabase/schema.sql` in the Supabase SQL editor.
-3. Copy `apps/web/.env.example` to `apps/web/.env.local`.
-4. Fill in:
-
-```bash
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-ADMIN_TOKEN=change-me
-```
-
-When `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are set, API routes use Supabase instead of the local JSON file.
-
-## Public Endpoints
-
-- `GET /api/offers/active?client_id=<id>`
-- `POST /api/impressions`
-- `POST /api/clicks`
-
-See `docs/API.md` for request bodies.
