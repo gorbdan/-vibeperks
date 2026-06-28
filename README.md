@@ -131,17 +131,55 @@ npm run cli
 The CLI requests `GET /api/offer` and prints the active offer:
 
 ```text
-🎁 Cursor
-
-Cursor
-
-Open: https://cursor.com
+🎁 Cursor → AI code editor for faster product development.
 ```
 
 Use a custom API URL:
 
 ```bash
 VIBEPERKS_API_URL=https://your-domain.com npm run cli
+```
+
+If the API is unavailable, the CLI prints nothing and exits without an error.
+
+## Claude Code Integration
+
+Claude Code supports a `statusLine` command in its settings. The command receives
+Claude Code session data through stdin and displays whatever the command writes to
+stdout.
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Add this to your Claude Code settings:
+
+```json
+{
+  "statusLine": {
+    "type": "command",
+    "command": "cd /path/to/vibeperks && VIBEPERKS_API_URL=http://localhost:3000 ./node_modules/.bin/vibeperks"
+  }
+}
+```
+
+For a deployed API:
+
+```json
+{
+  "statusLine": {
+    "type": "command",
+    "command": "VIBEPERKS_API_URL=https://your-domain.com npx vibeperks"
+  }
+}
+```
+
+The status line output is compact:
+
+```text
+🎁 Cursor → AI code editor for faster product development.
 ```
 
 ## Project Structure
