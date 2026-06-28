@@ -114,6 +114,36 @@ If there is no active offer, it returns `404`.
 
 Offers can be managed at `http://localhost:3000/admin/offers`.
 
+## CLI Usage
+
+Start the web app first:
+
+```bash
+npm run dev
+```
+
+Then run the CLI:
+
+```bash
+npm run cli
+```
+
+The CLI requests `GET /api/offer` and prints the active offer:
+
+```text
+🎁 Cursor
+
+Cursor
+
+Open: https://cursor.com
+```
+
+Use a custom API URL:
+
+```bash
+VIBEPERKS_API_URL=https://your-domain.com npm run cli
+```
+
 ## Project Structure
 
 ```text
@@ -134,6 +164,8 @@ Offers can be managed at `http://localhost:3000/admin/offers`.
     offer.ts
     index.ts
   public/
+  packages/
+    cli/
   supabase/
     migrations/
     seed.sql

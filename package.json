@@ -1,12 +1,16 @@
 {
-  "name": "vibeperks",
+  "name": "vibeperks-app",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "cli": "npm --workspace packages/cli run start",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

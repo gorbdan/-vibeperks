@@ -1,0 +1,14 @@
+{
+  "name": "vibeperks",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "vibeperks": "./src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
