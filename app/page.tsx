@@ -65,6 +65,12 @@ export default function HomePage() {
             >
               GitHub
             </a>
+            <a
+              className="rounded-md border border-zinc-300 px-5 py-3 text-sm font-medium"
+              href="mailto:hello@vibeperks.dev?subject=VibePerks%20waitlist"
+            >
+              Join Waitlist
+            </a>
           </div>
         </div>
 
@@ -158,7 +164,9 @@ export default function HomePage() {
           <p>VibePerks</p>
           <div className="flex gap-5">
             <a href="https://github.com/gorbdan/-vibeperks">GitHub</a>
-            <span>License</span>
+            <a href="https://github.com/gorbdan/-vibeperks/blob/main/LICENSE">
+              License
+            </a>
             <a href="mailto:hello@vibeperks.dev">Contact</a>
           </div>
         </div>

@@ -2,6 +2,8 @@
 
 VibePerks is a Vercel-ready Next.js project for showing useful AI-related perks to builders.
 
+Current release: `v0.1.0-alpha`
+
 ![VibePerks demo](public/demo.gif)
 
 ## Quick Start
@@ -13,11 +15,23 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+For the CLI:
+
+```bash
+npm run cli
+npx vibeperks --version
+```
+
 ## Screenshots
 
 ![Landing page](public/screenshot-landing.png)
 
 ![Claude Code status line](public/screenshot-status-line.png)
+
+## Why VibePerks
+
+VibePerks puts useful AI offers in a tiny status line while developers work.
+The goal is to make discovery feel ambient, not distracting.
 
 ## Stack
 
@@ -218,6 +232,47 @@ The status line output is compact:
 ```text
 🎁 Cursor → AI code editor for faster product development.
 ```
+
+## FAQ
+
+### Does VibePerks read my code?
+
+No. The CLI only requests `GET /api/offer` and prints a compact line.
+
+### Does it send Claude Code prompts anywhere?
+
+No. Claude Code may pass session metadata to status line commands through stdin,
+but the current CLI does not read or forward stdin.
+
+### Do I need Supabase locally?
+
+Supabase is required for real offer data. The app can still build and render the
+landing page without Supabase credentials.
+
+### Is the npm package published?
+
+Not yet. The package metadata is prepared for a future publish step.
+
+## Roadmap
+
+- Admin authentication.
+- Impression tracking.
+- Click tracking.
+- Offer scheduling and rotation.
+- Hosted demo deployment.
+- Published npm CLI package.
+- Better install flow for Claude Code users.
+
+## Release
+
+- Version: `v0.1.0-alpha`
+- License: MIT
+- Changelog: `CHANGELOG.md`
+- Release notes: `docs/RELEASE_NOTES_v0.1.0-alpha.md`
+
+## Contributing
+
+See `CONTRIBUTING.md`.
 
 ## Project Structure
 

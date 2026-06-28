@@ -1,7 +1,17 @@
 {
   "name": "vibeperks-app",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha",
   "private": true,
+  "description": "VibePerks web app for AI tool offers in developer workflows.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gorbdan/-vibeperks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gorbdan/-vibeperks/issues"
+  },
+  "homepage": "https://github.com/gorbdan/-vibeperks#readme",
   "workspaces": [
     "packages/*"
   ],

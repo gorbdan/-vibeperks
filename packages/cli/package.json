@@ -1,10 +1,24 @@
 {
   "name": "vibeperks",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha",
+  "description": "CLI for showing VibePerks offers in terminal and Claude Code status line.",
+  "license": "MIT",
   "type": "module",
+  "files": [
+    "src"
+  ],
   "bin": {
     "vibeperks": "./src/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gorbdan/-vibeperks.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/gorbdan/-vibeperks/issues"
+  },
+  "homepage": "https://github.com/gorbdan/-vibeperks#readme",
   "scripts": {
     "start": "node src/index.js"
   },

@@ -2,6 +2,11 @@
 
 import { cliConfig } from "./config.js";
 
+if (process.argv.includes("--version")) {
+  process.stdout.write("0.1.0-alpha\n");
+  process.exit(0);
+}
+
 try {
   const response = await fetch(`${cliConfig.apiUrl}/api/offer`);
 
