@@ -30,8 +30,8 @@ const exampleOffers = [
 const benefits = [
   "No context switching",
   "Useful AI tools",
-  "Quiet status line",
-  "Built for Claude Code"
+  "Quiet terminal output",
+  "Built for Claude Code CLI"
 ];
 
 export default function HomePage() {
@@ -40,11 +40,11 @@ export default function HomePage() {
       <section className="mx-auto grid min-h-screen max-w-6xl items-center gap-12 px-6 py-16 lg:grid-cols-[1fr_0.9fr]">
         <div>
           <h1 className="max-w-3xl text-5xl font-semibold tracking-tight md:text-7xl">
-            Useful AI offers in your Claude Code status line.
+            Tiny perks for Claude Code CLI power users.
           </h1>
           <p className="mt-6 max-w-xl text-xl leading-8 text-zinc-600">
-            Discover relevant tools while Claude thinks, without opening another
-            tab.
+            Discover relevant AI tools from your terminal or Claude Code status
+            line, without opening another tab.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -88,10 +88,10 @@ export default function HomePage() {
                 <h3 className="text-xl font-semibold">{step}</h3>
                 <p className="mt-3 text-zinc-600">
                   {index === 0
-                    ? "Add VibePerks to your Claude Code status line."
+                    ? "Run VibePerks in your terminal or Claude Code CLI status line."
                     : null}
                   {index === 1
-                    ? "Keep building while Claude handles the heavy thinking."
+                    ? "Keep building while Claude Code handles the heavy thinking."
                     : null}
                   {index === 2
                     ? "Notice useful AI offers without opening another tab."

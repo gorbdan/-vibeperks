@@ -6,7 +6,7 @@
 ![Supabase](https://img.shields.io/badge/Supabase-ready-3ecf8e.svg)
 ![Alpha](https://img.shields.io/badge/status-alpha-orange.svg)
 
-Install VibePerks to discover useful AI tools in your Claude Code status line without leaving your flow.
+Install VibePerks to discover useful AI tools from your terminal or Claude Code CLI status line without leaving your flow.
 
 ![VibePerks demo](public/demo.gif)
 
@@ -17,7 +17,13 @@ npm install
 npm run dev
 ```
 
-Add VibePerks to Claude Code:
+Use it as a terminal command:
+
+```bash
+npm run cli
+```
+
+Or add it to Claude Code CLI status line:
 
 ```json
 {
@@ -30,10 +36,12 @@ Add VibePerks to Claude Code:
 
 Done.
 
+> VibePerks integrates with Claude Code CLI status line. It does not install inside Claude Desktop or the Claude web app.
+
 ## Why?
 
-- Find relevant AI tools while Claude Code is already working.
-- Keep discovery inside a tiny status line, not another tab.
+- Find relevant AI tools while Claude Code CLI is already working.
+- Keep discovery inside a tiny terminal/status-line surface, not another tab.
 - Stay focused: one useful offer, no feed, no dashboard.
 
 ## Privacy
@@ -46,7 +54,7 @@ Done.
 
 ![Landing page](public/screenshot-landing.png)
 
-![Claude Code status line](public/screenshot-status-line.png)
+![Claude Code CLI status line](public/screenshot-status-line.png)
 
 ## Quick Start
 
@@ -158,11 +166,13 @@ VIBEPERKS_API_URL=https://your-domain.com npm run cli
 
 If the API is unavailable, the CLI prints nothing and exits without an error.
 
-## Claude Code Integration
+## Claude Code CLI Integration
 
 Claude Code supports a `statusLine` command in its settings. The command receives
 Claude Code session data through stdin and displays whatever the command writes to
 stdout.
+
+This is for Claude Code CLI. It is not a Claude Desktop extension.
 
 For a deployed API:
 
