@@ -48,6 +48,24 @@ export class OfferRepository {
     return data;
   }
 
+  async getRandomActiveOffer(): Promise<Offer | null> {
+    const { data, error } = await this.supabase
+      .from("offers")
+      .select("*")
+      .eq("active", true);
+
+    if (error) {
+      throw error;
+    }
+
+    if (data.length === 0) {
+      return null;
+    }
+
+    const index = Math.floor(Math.random() * data.length);
+    return data[index];
+  }
+
   async createOffer(input: CreateOfferInput): Promise<Offer> {
     const { data, error } = await this.supabase
       .from("offers")

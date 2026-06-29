@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   try {
     const repository = new OfferRepository();
-    const offer = await repository.getActiveOffer();
+    const offer = await repository.getRandomActiveOffer();
 
     if (!offer) {
       return errorResponse("Offer not found", 404);
