@@ -1,10 +1,52 @@
 # VibePerks
 
-VibePerks is a Vercel-ready Next.js project for showing useful AI-related perks to builders.
+[![License: MIT](https://img.shields.io/badge/license-MIT-black.svg)](LICENSE)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)
+![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)
+![Supabase](https://img.shields.io/badge/Supabase-ready-3ecf8e.svg)
+![Alpha](https://img.shields.io/badge/status-alpha-orange.svg)
 
-Current release: `v0.1.0-alpha`
+Install VibePerks to discover useful AI tools in your Claude Code status line without leaving your flow.
 
 ![VibePerks demo](public/demo.gif)
+
+## Install
+
+```bash
+npm install
+npm run dev
+```
+
+Add VibePerks to Claude Code:
+
+```json
+{
+  "statusLine": {
+    "type": "command",
+    "command": "cd /path/to/vibeperks && VIBEPERKS_API_URL=http://localhost:3000 ./node_modules/.bin/vibeperks"
+  }
+}
+```
+
+Done.
+
+## Why?
+
+- Find relevant AI tools while Claude Code is already working.
+- Keep discovery inside a tiny status line, not another tab.
+- Stay focused: one useful offer, no feed, no dashboard.
+
+## Privacy
+
+- We never read your prompts.
+- We never read your code.
+- We never send your conversations anywhere.
+
+## Screenshots
+
+![Landing page](public/screenshot-landing.png)
+
+![Claude Code status line](public/screenshot-status-line.png)
 
 ## Quick Start
 
@@ -22,17 +64,6 @@ npm run cli
 npx vibeperks --version
 ```
 
-## Screenshots
-
-![Landing page](public/screenshot-landing.png)
-
-![Claude Code status line](public/screenshot-status-line.png)
-
-## Why VibePerks
-
-VibePerks puts useful AI offers in a tiny status line while developers work.
-The goal is to make discovery feel ambient, not distracting.
-
 ## Stack
 
 - Next.js App Router
@@ -42,14 +73,6 @@ The goal is to make discovery feel ambient, not distracting.
 - ESLint
 - Prettier
 - Vercel-ready project structure
-
-## Installation
-
-Install dependencies:
-
-```bash
-npm install
-```
 
 ## Environment
 
@@ -65,21 +88,6 @@ Fill in Supabase values:
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 ```
-
-## Development
-
-Start the project:
-
-```bash
-npm run dev
-```
-
-Open:
-
-- `http://localhost:3000`
-- `http://localhost:3000/admin`
-
-If port `3000` is busy, Next.js will print the next available local URL.
 
 ## Database
 
@@ -109,57 +117,14 @@ The seed file is:
 supabase/seed.sql
 ```
 
-## Checks
-
-Run a production build:
-
-```bash
-npm run build
-```
-
-Run ESLint:
-
-```bash
-npm run lint
-```
-
-Run TypeScript checks:
-
-```bash
-npm run typecheck
-```
-
-Check formatting:
-
-```bash
-npm run format:check
-```
-
-## Architecture
-
-- `app/` contains routes, pages, and server actions.
-- `lib/offer-repository.ts` is the only layer that queries Supabase tables.
-- `lib/supabase.ts` creates the Supabase client from shared config.
-- `lib/config.ts` centralizes environment variables.
-- `lib/api-response.ts` centralizes API success and error responses.
-- `lib/logger.ts` centralizes logging for server-side code.
-- `types/` contains shared TypeScript types.
-- `packages/cli/` contains the VibePerks CLI and its CLI-specific config.
-
-API routes should stay thin: call repositories, return shared response helpers,
-and log unexpected errors through `logger`.
-
 ## API
-
-The project includes these endpoints:
 
 - `GET /api/offer`
 - `POST /api/impression`
 - `POST /api/click`
 
-`GET /api/offer` returns one active offer from Supabase.
-
-If there is no active offer, it returns `404`.
+`GET /api/offer` returns one active offer from Supabase. If there is no active
+offer, it returns `404`.
 
 ## Admin
 
@@ -199,23 +164,6 @@ Claude Code supports a `statusLine` command in its settings. The command receive
 Claude Code session data through stdin and displays whatever the command writes to
 stdout.
 
-Install dependencies:
-
-```bash
-npm install
-```
-
-Add this to your Claude Code settings:
-
-```json
-{
-  "statusLine": {
-    "type": "command",
-    "command": "cd /path/to/vibeperks && VIBEPERKS_API_URL=http://localhost:3000 ./node_modules/.bin/vibeperks"
-  }
-}
-```
-
 For a deployed API:
 
 ```json
@@ -227,22 +175,15 @@ For a deployed API:
 }
 ```
 
-The status line output is compact:
-
-```text
-🎁 Cursor → AI code editor for faster product development.
-```
-
 ## FAQ
 
 ### Does VibePerks read my code?
 
-No. The CLI only requests `GET /api/offer` and prints a compact line.
+No.
 
 ### Does it send Claude Code prompts anywhere?
 
-No. Claude Code may pass session metadata to status line commands through stdin,
-but the current CLI does not read or forward stdin.
+No. The current CLI does not read or forward stdin.
 
 ### Do I need Supabase locally?
 
@@ -263,6 +204,29 @@ Not yet. The package metadata is prepared for a future publish step.
 - Published npm CLI package.
 - Better install flow for Claude Code users.
 
+## Development
+
+```bash
+npm run lint
+npm run typecheck
+npm run build
+npm run format:check
+```
+
+## Architecture
+
+- `app/` contains routes, pages, and server actions.
+- `lib/offer-repository.ts` is the only layer that queries Supabase tables.
+- `lib/supabase.ts` creates the Supabase client from shared config.
+- `lib/config.ts` centralizes environment variables.
+- `lib/api-response.ts` centralizes API success and error responses.
+- `lib/logger.ts` centralizes logging for server-side code.
+- `types/` contains shared TypeScript types.
+- `packages/cli/` contains the VibePerks CLI and its CLI-specific config.
+
+API routes should stay thin: call repositories, return shared response helpers,
+and log unexpected errors through `logger`.
+
 ## Release
 
 - Version: `v0.1.0-alpha`
@@ -273,47 +237,3 @@ Not yet. The package metadata is prepared for a future publish step.
 ## Contributing
 
 See `CONTRIBUTING.md`.
-
-## Project Structure
-
-```text
-/
-  docs/
-    MVP.md
-  app/
-    admin/
-    api/
-    globals.css
-    layout.tsx
-    page.tsx
-  components/
-  lib/
-    api-response.ts
-    config.ts
-    logger.ts
-    offer-repository.ts
-    supabase.ts
-  types/
-    api.ts
-    offer.ts
-    index.ts
-  public/
-  packages/
-    cli/
-      src/
-        config.js
-        index.js
-  supabase/
-    migrations/
-    seed.sql
-  scripts/
-  .env.example
-  .eslintrc.json
-  .gitignore
-  .prettierrc
-  next.config.mjs
-  package.json
-  postcss.config.mjs
-  tailwind.config.ts
-  tsconfig.json
-```

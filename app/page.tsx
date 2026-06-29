@@ -39,18 +39,12 @@ export default function HomePage() {
     <main className="bg-white text-zinc-950">
       <section className="mx-auto grid min-h-screen max-w-6xl items-center gap-12 px-6 py-16 lg:grid-cols-[1fr_0.9fr]">
         <div>
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
-            VibePerks
-          </p>
           <h1 className="max-w-3xl text-5xl font-semibold tracking-tight md:text-7xl">
-            Discover useful AI tools while Claude thinks.
+            Useful AI offers in your Claude Code status line.
           </h1>
           <p className="mt-6 max-w-xl text-xl leading-8 text-zinc-600">
-            Tiny status line.
-            <br />
-            Real AI offers.
-            <br />
-            Zero distractions.
+            Discover relevant tools while Claude thinks, without opening another
+            tab.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -64,12 +58,6 @@ export default function HomePage() {
               href="https://github.com/gorbdan/-vibeperks"
             >
               GitHub
-            </a>
-            <a
-              className="rounded-md border border-zinc-300 px-5 py-3 text-sm font-medium"
-              href="mailto:hello@vibeperks.dev?subject=VibePerks%20waitlist"
-            >
-              Join Waitlist
             </a>
           </div>
         </div>
@@ -156,6 +144,25 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-zinc-200 bg-zinc-950 px-6 py-16 text-white">
+        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-6 md:flex-row md:items-center">
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight">
+              Want early access?
+            </h2>
+            <p className="mt-3 text-zinc-300">
+              Join the waitlist for the public alpha.
+            </p>
+          </div>
+          <a
+            className="w-fit rounded-md bg-white px-5 py-3 text-sm font-medium text-zinc-950"
+            href="mailto:hello@vibeperks.dev?subject=VibePerks%20waitlist"
+          >
+            Join Waitlist
+          </a>
         </div>
       </section>
 
