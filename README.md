@@ -6,21 +6,22 @@
 ![Supabase](https://img.shields.io/badge/Supabase-ready-3ecf8e.svg)
 ![Alpha](https://img.shields.io/badge/status-alpha-orange.svg)
 
-VibePerks helps Claude Code CLI users discover useful AI tools and credits inside the terminal, without checking newsletters, launch sites, or social feeds.
+VibePerks helps Claude Code CLI users turn a tiny terminal status line into passive affiliate income from useful AI-tool installs.
 
 ![VibePerks demo](public/demo.gif)
 
 ## Why Install This?
 
-Developers already spend hours inside Claude Code CLI. VibePerks turns one tiny
-status-line slot into a quiet discovery channel for useful AI products, credits,
-and launch offers.
+Claude Code subscriptions and AI tools are expensive. VibePerks is built around
+a simple idea: if a developer is already working in the terminal all day, a tiny
+status-line offer can help pay for that workflow when someone installs a tool
+through it.
 
 You should install it if you want:
 
-- relevant AI tool offers while you are already coding;
-- no extra browser tab, inbox, feed, or dashboard;
-- a tiny, silent CLI that never reads your prompts or code.
+- a chance to offset Claude Code and AI-tool subscription costs;
+- passive monetization from a surface you already use;
+- one small, relevant offer instead of a feed, dashboard, or noisy ad unit.
 
 ## What Works Today
 
@@ -37,6 +38,7 @@ You should install it if you want:
 - npm package metadata is prepared, but the package is not published yet.
 - Claude Desktop and Claude web app extensions are not supported.
 - Impression and click endpoints exist as placeholders only.
+- Install attribution, payout tracking, and payments are not implemented yet.
 - Admin authentication is not implemented yet.
 
 ## Install
@@ -69,9 +71,9 @@ Done.
 
 ## Why?
 
-- Find relevant AI tools while Claude Code CLI is already working.
-- Keep discovery inside a tiny terminal/status-line surface, not another tab.
-- Stay focused: one useful offer, no feed, no dashboard.
+- Offset expensive AI subscriptions with affiliate-style installs.
+- Monetize one tiny terminal/status-line surface without interrupting work.
+- Keep it focused: one useful offer, no feed, no dashboard.
 
 ## Privacy
 
@@ -226,20 +228,25 @@ For a deployed API:
 
 ### Who is this for?
 
-Claude Code CLI users and AI builders who want to discover useful developer
-tools without leaving the terminal.
+Claude Code CLI users and AI builders who want their everyday developer
+workflow to help pay for itself.
 
 ### Why would a developer install this?
 
-Because useful AI tools, credits, and launch offers are scattered across social
-feeds, newsletters, Discords, and product launches. VibePerks makes that
-discovery ambient and quiet: one relevant offer in the place where the developer
-is already working.
+Because AI subscriptions are becoming a real monthly cost. VibePerks is meant
+to turn a small, low-distraction status-line placement into passive income from
+tool installs and partner offers.
 
 ### Is this an ad network?
 
 Not yet. The MVP is the technical foundation: offers in Supabase, an API, admin
-CRUD, and a CLI/status-line surface.
+CRUD, and a CLI/status-line surface. Attribution, partner billing, and payouts
+are future work.
+
+### Does the alpha pay users today?
+
+No. The alpha proves the product surface and offer delivery. Real install
+tracking and payout mechanics are not implemented yet.
 
 ### Does VibePerks read my code?
 

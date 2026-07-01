@@ -4,12 +4,13 @@ This guide is for someone opening the repository for the first time.
 
 ## What VibePerks Is
 
-VibePerks is a tiny discovery channel for Claude Code CLI users. It shows one
+VibePerks is a tiny monetization surface for Claude Code CLI users. It shows one
 useful AI-tool offer in a terminal or status line while the developer is already
 working.
 
-The motivation is simple: developers should not need to scan feeds,
-newsletters, and Discords to find useful AI tools or credits.
+The motivation is simple: Claude Code and AI-tool subscriptions are expensive,
+and a developer should be able to offset those costs through passive
+affiliate-style installs without leaving the terminal.
 
 ## Current Product Shape
 
@@ -22,6 +23,9 @@ VibePerks has four parts:
 
 The project is alpha. It is a real working MVP, but not a hosted production
 service yet.
+
+Important: the alpha does not include real install attribution, payout tracking,
+or payments yet. It proves the offer delivery surface first.
 
 ## Quick Local Run
 

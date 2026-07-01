@@ -28,9 +28,9 @@ const exampleOffers = [
 ];
 
 const benefits = [
+  "Offset AI subscriptions",
+  "Passive install upside",
   "No context switching",
-  "Useful AI tools",
-  "Quiet terminal output",
   "Built for Claude Code CLI"
 ];
 
@@ -40,11 +40,11 @@ export default function HomePage() {
       <section className="mx-auto grid min-h-screen max-w-6xl items-center gap-12 px-6 py-16 lg:grid-cols-[1fr_0.9fr]">
         <div>
           <h1 className="max-w-3xl text-5xl font-semibold tracking-tight md:text-7xl">
-            Tiny perks for Claude Code CLI power users.
+            Let your Claude Code status line pay for itself.
           </h1>
           <p className="mt-6 max-w-xl text-xl leading-8 text-zinc-600">
-            Stop hunting through feeds for AI tools and credits. VibePerks
-            brings one relevant offer into your terminal while you already work.
+            VibePerks turns a tiny terminal surface into passive affiliate-style
+            upside from useful AI-tool installs.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -94,7 +94,7 @@ export default function HomePage() {
                     ? "Keep building while Claude Code handles the heavy thinking."
                     : null}
                   {index === 2
-                    ? "Notice useful AI offers without opening another tab."
+                    ? "Earn from partner installs once attribution and payouts are live."
                     : null}
                 </p>
               </div>

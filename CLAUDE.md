@@ -2,11 +2,11 @@
 
 ## Project
 
-VibePerks shows useful AI-tool offers to Claude Code CLI users through a web app, API, and tiny terminal/status-line CLI.
+VibePerks helps Claude Code CLI users turn a tiny terminal/status-line surface into passive affiliate income from useful AI-tool installs.
 
 ## Goal
 
-Build a simple, reliable MVP that can manage offers, return one active offer, and display it where developers already work.
+Build a simple, reliable MVP that can manage offers, return one active offer, and display it where developers already work, before adding attribution and payouts.
 
 ## Tech Stack
 

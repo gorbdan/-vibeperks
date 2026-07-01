@@ -1,15 +1,16 @@
 # VibePerks MVP
 
-VibePerks is an alpha product that shows useful AI-tool offers to Claude Code CLI users through a tiny terminal/status-line surface.
+VibePerks is an alpha product that helps Claude Code CLI users turn a tiny terminal/status-line surface into passive affiliate income from AI-tool installs.
 
 ## Motivation
 
-AI builders discover tools, credits, and launches through noisy channels:
-newsletters, social feeds, Discords, and random product pages.
+Claude Code and AI-tool subscriptions can become expensive for solo builders and
+small teams.
 
-VibePerks makes discovery quiet and contextual. A developer can keep working in
-Claude Code CLI and occasionally see one useful offer without opening another
-tab.
+VibePerks is built around a simple business idea: developers already spend hours
+inside Claude Code CLI, so a tiny status-line offer can create a background
+earning surface. When someone installs a partner tool through that surface,
+future versions of VibePerks can attribute the install and pay the user.
 
 ## MVP Scope
 
@@ -20,6 +21,9 @@ The MVP proves the full loop:
 3. Return one active offer from a public API.
 4. Print that offer from a Node.js CLI.
 5. Allow the CLI output to be used in Claude Code CLI `statusLine`.
+
+The MVP does not prove payouts yet. It proves that offers can be managed,
+served, and displayed in the developer workflow.
 
 ## Implemented
 
@@ -43,6 +47,9 @@ The MVP proves the full loop:
 - Admin authentication.
 - Real impression tracking.
 - Real click tracking.
+- Install attribution.
+- Payout tracking.
+- Payment flows.
 - Offer scheduling.
 - Billing or advertiser accounts.
 - Hosted production deployment.
