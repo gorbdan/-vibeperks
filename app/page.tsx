@@ -43,8 +43,8 @@ export default function HomePage() {
             Tiny perks for Claude Code CLI power users.
           </h1>
           <p className="mt-6 max-w-xl text-xl leading-8 text-zinc-600">
-            Discover relevant AI tools from your terminal or Claude Code status
-            line, without opening another tab.
+            Stop hunting through feeds for AI tools and credits. VibePerks
+            brings one relevant offer into your terminal while you already work.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a

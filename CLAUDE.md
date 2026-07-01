@@ -2,11 +2,11 @@
 
 ## Project
 
-VibePerks shows useful AI-related offers to builders through a web app, API, and CLI.
+VibePerks shows useful AI-tool offers to Claude Code CLI users through a web app, API, and tiny terminal/status-line CLI.
 
 ## Goal
 
-Build a simple, reliable MVP that can manage offers, return one active offer, and display it in developer workflows.
+Build a simple, reliable MVP that can manage offers, return one active offer, and display it where developers already work.
 
 ## Tech Stack
 
@@ -58,6 +58,7 @@ Supabase is the database layer. Schema changes must go through SQL migrations in
 - `app/` - Next.js pages, layouts, route handlers, and Server Actions.
 - `components/` - shared UI components.
 - `docs/` - product and planning documents.
+- `docs/DEVELOPER_GUIDE.md` - first-read guide for external developers.
 - `lib/` - repositories, config, logging, API helpers, and service code.
 - `packages/cli/` - VibePerks CLI package.
 - `public/` - static assets.

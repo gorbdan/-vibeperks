@@ -6,9 +6,38 @@
 ![Supabase](https://img.shields.io/badge/Supabase-ready-3ecf8e.svg)
 ![Alpha](https://img.shields.io/badge/status-alpha-orange.svg)
 
-Install VibePerks to discover useful AI tools from your terminal or Claude Code CLI status line without leaving your flow.
+VibePerks helps Claude Code CLI users discover useful AI tools and credits inside the terminal, without checking newsletters, launch sites, or social feeds.
 
 ![VibePerks demo](public/demo.gif)
+
+## Why Install This?
+
+Developers already spend hours inside Claude Code CLI. VibePerks turns one tiny
+status-line slot into a quiet discovery channel for useful AI products, credits,
+and launch offers.
+
+You should install it if you want:
+
+- relevant AI tool offers while you are already coding;
+- no extra browser tab, inbox, feed, or dashboard;
+- a tiny, silent CLI that never reads your prompts or code.
+
+## What Works Today
+
+- Landing page.
+- Supabase `offers` table with migration and seed data.
+- Admin page for creating, editing, disabling, and deleting offers.
+- `GET /api/offer` for one active offer.
+- CLI command that prints one compact offer.
+- Claude Code CLI `statusLine` command example.
+
+## Current Limits
+
+- Alpha project, not production hosted yet.
+- npm package metadata is prepared, but the package is not published yet.
+- Claude Desktop and Claude web app extensions are not supported.
+- Impression and click endpoints exist as placeholders only.
+- Admin authentication is not implemented yet.
 
 ## Install
 
@@ -58,12 +87,17 @@ Done.
 
 ## Quick Start
 
+Clone the repository, install dependencies, and start the app:
+
 ```bash
 npm install
 npm run dev
 ```
 
 Open `http://localhost:3000`.
+
+To use real offer data, create `.env.local`, add Supabase credentials, run the
+database migration, and seed the demo offers.
 
 For the CLI:
 
@@ -138,6 +172,9 @@ offer, it returns `404`.
 
 Offers can be managed at `http://localhost:3000/admin/offers`.
 
+The admin page talks to Supabase through Server Actions and the repository
+layer. There is no admin auth in the alpha.
+
 ## CLI Usage
 
 Start the web app first:
@@ -186,6 +223,23 @@ For a deployed API:
 ```
 
 ## FAQ
+
+### Who is this for?
+
+Claude Code CLI users and AI builders who want to discover useful developer
+tools without leaving the terminal.
+
+### Why would a developer install this?
+
+Because useful AI tools, credits, and launch offers are scattered across social
+feeds, newsletters, Discords, and product launches. VibePerks makes that
+discovery ambient and quiet: one relevant offer in the place where the developer
+is already working.
+
+### Is this an ad network?
+
+Not yet. The MVP is the technical foundation: offers in Supabase, an API, admin
+CRUD, and a CLI/status-line surface.
 
 ### Does VibePerks read my code?
 
@@ -236,6 +290,8 @@ npm run format:check
 
 API routes should stay thin: call repositories, return shared response helpers,
 and log unexpected errors through `logger`.
+
+For a developer handoff, start with `docs/DEVELOPER_GUIDE.md`.
 
 ## Release
 
